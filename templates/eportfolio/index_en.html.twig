@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
 <style>
-   /* Styles généraux */
+   /* General styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
@@ -33,12 +33,12 @@ body {
 
 .section h1 {
     font-size: 2rem;
-    color: #007bff; /* Couleur bleue pour le titre principal */
+    color: #007bff; /* Blue color for the main title */
 }
 
 .section h2 {
     font-size: 1.5rem;
-    border-bottom: 2px solid #007bff; /* Bordure bleue pour les sous-titres */
+    border-bottom: 2px solid #007bff; /* Blue border for subtitles */
     padding-bottom: 0.5rem;
     color: #333;
 }
@@ -63,8 +63,8 @@ body {
 }
 
 .section ul li::before {
-    content: "•"; /* Ajoute un point devant chaque élément */
-    color: #007bff; /* Couleur bleue pour le point */
+    content: "•"; /* Adds a bullet point before each item */
+    color: #007bff; /* Blue color for the bullet point */
     font-size: 1.5rem;
     margin-right: 0.5rem;
 }
@@ -97,7 +97,7 @@ body {
     color: #fff;
 }
 
-/* Styles pour les écrans mobiles */
+/* Styles for mobile screens */
 @media (max-width: 768px) {
     .main-content {
         padding: 15px;
@@ -128,15 +128,15 @@ footer {
     <div class="main-content">
         <!-- Section Personal Information -->
         <div class="section">
-            <img src="{{ asset('images/profile.jpg') }}" alt="Photo de {{ data.name }}" class="profile-img">
-            <h1 class="text-center">CHOUKRI MOHAMMED ISLAM </h1>
-            <p class="text-center">18 ans | Du MAROC</p>
-            <p class="text-center">Étudiant en première année de Bachelor Réseaux et Telecommunications à L'IUT de Roanne.</p>
+            <img src="{{ asset('images/profile.jpg') }}" alt="Photo of {{ data.name }}" class="profile-img">
+            <h1 class="text-center">{{ data.name }}</h1>
+            <p class="text-center">{{ data.age }} years old | From {{ data.origin }}</p>
+            <p class="text-center">First-year student in Networks and Telecommunications at IUT de Roanne.</p>
         </div>
 
         <!-- Section Bachelor in Networks and Telecommunications -->
         <div class="section">
-            <h2>Bachelor en Réseaux et Télécommunications</h2>
+            <h2>Bachelor in Networks and Telecommunications</h2>
             <p>
                 {{ data.description }}
             </p>
@@ -144,7 +144,7 @@ footer {
 
         <!-- Section Objectives -->
         <div class="section">
-            <h2>Objectifs</h2>
+            <h2>Objectives</h2>
             <ul>
                 {% for objective in data.objectives %}
                     <li>{{ objective }}</li>
@@ -152,9 +152,9 @@ footer {
             </ul>
         </div>
 
-        <!-- Button to switch to English version -->
+        <!-- Button to switch to French version -->
         <div class="text-center mt-4">
-            <a class="btn btn-outline-primary" href="/home_en">English</a>
+            <a class="btn btn-outline-primary" href="/home">Français</a>
         </div>
     </div>
 {% endblock %}

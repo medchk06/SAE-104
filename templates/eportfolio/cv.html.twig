@@ -1,0 +1,299 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV{% endblock %}
+
+{% block body %}
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cv-container {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .cv-left-column {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .cv-right-column {
+            padding: 20px;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .cv-section h1, .cv-section h2 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .cv-section h1 {
+            font-size: 2rem;
+            color: #007bff; /* Couleur bleue pour le titre principal */
+        }
+
+        .cv-section h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #007bff; /* Bordure bleue pour les sous-titres */
+            padding-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .cv-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .cv-section ul li {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .cv-section ul li strong {
+            color: #007bff; /* Couleur bleue pour les titres */
+        }
+
+        .language-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .language-name {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 10px;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #007bff; /* Couleur bleue pour la barre de progression */
+            border-radius: 5px;
+        }
+
+        .progress-percent {
+            margin-left: 10px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .list-unstyled {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .list-unstyled li {
+            margin-bottom: 1rem;
+        }
+
+        .list-unstyled li strong {
+            color: #007bff; /* Couleur bleue pour les titres */
+        }
+
+        /* Styles pour les écrans mobiles */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr; /* Une seule colonne sur les petits écrans */
+            }
+
+            .cv-left-column, .cv-right-column {
+                padding: 15px;
+            }
+
+            .cv-section h1 {
+                font-size: 1.75rem;
+            }
+
+            .cv-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Styles pour la section Soft Skills */
+        .soft-skills-section {
+            margin-bottom: 2rem;
+        }
+
+        .soft-skills-section h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-bottom: 2px solid #007bff; /* Bordure bleue pour le titre */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .soft-skills-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .soft-skills-list li {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .soft-skills-list li::before {
+            content: "•"; /* Ajoute un point devant chaque élément */
+            color: #007bff; /* Couleur bleue pour le point */
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+    </style>
+
+    <div class="cv-container">
+        <!-- Colonne de gauche -->
+        <div class="cv-left-column">
+            <div class="cv-section">
+                <h2>Informations personnelles</h2>
+                <ul>
+                    <li><strong>Nom :</strong> CHOUKRI MOHAMMED ISLAM</li>
+                    <li><strong>Email :</strong> medchoukri95@gmail.com</li>
+                    <li><strong>Téléphone :</strong> +33 638163736</li>
+                    <li><strong>Adresse :</strong> 20 RUE RAOUL FOLLEREAU, Bâtiment A</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h2>Langues</h2>
+                <div class="language-item">
+                    <span class="language-name">Arabe</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                        <span class="progress-percent">90%</span>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Français</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                        <span class="progress-percent">80%</span>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <span class="language-name">Anglais</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                        <span class="progress-percent">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section soft-skills-section">
+                <h2>Soft Skills</h2>
+                <ul class="soft-skills-list">
+                    <li>Travail de groupe</li>
+                    <li>Communication</li>
+                    <li>Facilité d’adaptation</li>
+                    <li>Sens de bénévolat</li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h2>Centres d'intérêts</h2>
+                <ul class="interests-list">
+                    <li>Programmation</li>
+                    <li>Films et séries</li>
+                    <li>Sports</li>
+                    <li>Photographie</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Colonne de droite -->
+        <div class="cv-right-column">
+            <div class="cv-section">
+                <h1>CHOUKRI MOHAMMED ISLAM</h1>
+                <p class="lead">Étudiant en BUT Réseaux et Télécommunications à l'IUT de Roanne</p>
+            </div>
+
+            <div class="cv-section">
+                <h2>Compétences techniques</h2>
+                <ul class="list-unstyled">
+                    <li class="mb-3">
+                        <strong>Développement Web :</strong> HTML, CSS, Symfony
+                    </li>
+                    <li class="mb-3">
+                        <strong>Programmation :</strong> Python, C
+                    </li>
+                    <li class="mb-3">
+                        <strong>Virtualisation :</strong> VirtualBox
+                    </li>
+                    <li class="mb-3">
+                        <strong>Machine Serveur :</strong> Linux (Ubuntu)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h2>Formation</h2>
+                <ul>
+                    <li>
+                        <strong>BUT Réseaux et Télécommunications</strong><br>
+                        IUT de Roanne<br>
+                        Année en cours
+                    </li>
+                    <li>
+                        <strong>BACCALAURÉAT SCIENCE PHYSIQUE OPTION FRANÇAIS</strong><br>
+                        LYCÉE QUALIFIANT ANAS IBN MALIK<br>
+                        2024
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h2>Expérience</h2>
+                <ul>
+                    <li>
+                        <strong>Ex-Athlète de TAEKWONDO</strong><br>
+                        Ecole loriad de TAEKWONDO<br>
+                        2016 - 2019<br>
+                        Préparation physique
+                    </li>
+                    <li>
+                        <strong>Participation à l’application du programme de la vie scolaire et les activités parallèles</strong><br>
+                        Établissement KHALED BNO AL WALID<br>
+                        2018
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+ 
+{% endblock %}
