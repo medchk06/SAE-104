@@ -133,7 +133,13 @@ footer {
             <p class="text-center">{{ data.age }} years old | From {{ data.origin }}</p>
             <p class="text-center">First-year student in Networks and Telecommunications at IUT de Roanne.</p>
         </div>
-
+                <!-- Section About Me -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p>
+                As a student in the Networks and Telecommunications program, I am passionate about technology and the technical challenges of network administration. Alongside my studies, I am an avid volleyball player, where I enjoy teamwork, strategy, and the competitive spirit. Coding is also one of my great passions: I love creating websites, developing applications, and exploring the endless possibilities that programming offers. These various activities allow me to develop a wide range of skills, from technical rigor to project management in a team, as well as creativity and problem-solving. Always curious and motivated, I seek to combine my passions to build a rich and fulfilling professional future.
+            </p>
+        </div>
         <!-- Section Bachelor in Networks and Telecommunications -->
         <div class="section">
             <h2>Bachelor in Networks and Telecommunications</h2>
@@ -151,7 +157,12 @@ footer {
                 {% endfor %}
             </ul>
         </div>
-
+            <!-- Buttons -->
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ path('cv') }}">View CV</a>
+            <a class="btn btn-outline-primary" href="{{ path('form') }}">Download CV</a>
+            <a class="btn btn-outline-primary" href="#">Empty Button</a>
+        </div>
         <!-- Button to switch to French version -->
         <div class="text-center mt-4">
             <a class="btn btn-outline-primary" href="/home">Français</a>

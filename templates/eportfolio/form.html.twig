@@ -32,15 +32,11 @@
         font-weight: bold;
     }
 
-    .form-group input, .form-group textarea {
+    .form-group input {
         width: 100%;
         padding: 0.5rem;
         border: 1px solid #ccc;
         border-radius: 5px;
-    }
-
-    .form-group textarea {
-        resize: vertical;
     }
 
     .btn-primary {
@@ -55,6 +51,20 @@
 
     .btn-primary:hover {
         background-color: #0056b3;
+    }
+
+    .btn-outline-primary {
+        border: 2px solid #007bff;
+        color: #007bff;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
     }
 </style>
 
@@ -73,10 +83,16 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
         </div>
-        <div class="text-center">
-            <button type="submit" class="btn-primary">Télécharger le CV</button>
-        </div>
+    <div class="text-center mt-4">
+    <a href="{{ asset('cv choukri.pdf') }}" target="_blank" class="btn btn-outline-primary btn-lg">
+        <span>
+            <svg width="16" height="16">
+                <use xlink:href="#download"></use>
+            </svg>
+        </span>
+        Télécharger le CV
+    </a>
+</div>
     </form>
 </div>
-
 {% endblock %}

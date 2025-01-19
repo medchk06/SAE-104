@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Projets{% endblock %}
+
+{% block body %}
+<style>
+    /* Styles généraux */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .section {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .section {
+        margin-bottom: 2rem;
+    }
+
+    .section h1, .section h2 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .section h1 {
+        font-size: 2rem;
+        color: #007bff; /* Couleur bleue pour le titre principal */
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+        border-bottom: 2px solid #007bff; /* Bordure bleue pour les sous-titres */
+        padding-bottom: 0.5rem;
+        color: #333;
+    }
+
+    .section p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        color: #555;
+    }
+
+    .project-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .project-list li {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-list li h3 {
+        font-size: 1.25rem;
+        color: #007bff;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-list li p {
+        margin-bottom: 0.5rem;
+    }
+
+    .project-list li a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .project-list li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Styles pour les écrans mobiles */
+    @media (max-width: 768px) {
+        .container {
+            padding: 15px;
+        }
+
+        .section h1 {
+            font-size: 1.75rem;
+        }
+
+        .section h2 {
+            font-size: 1.25rem;
+        }
+    }
+</style>
+<body>
+<div class="container">
+    <!-- Section Titre -->
+    <div class="section">
+        <h1 class="text-center">Mes Projets</h1>
+        <p class="text-center">Découvrez les projets sur lesquels j'ai travaillé dans le cadre de mes études et de mes passions.</p>
+        <h2>Projets récents</h2>
+        <ul class="project-list">
+            <li>
+                <h3>Site web pour une association locale</h3>
+                <p>Développement d'un site web pour une association locale, avec gestion des événements et des dons en ligne.</p>
+                <a href="https://github.com/medchk06/r109">Voir le projet</a>
+            </li>
+            <li>
+                <h3>Application de gestion de tâches</h3>
+                <p>Création d'une application de gestion de tâches en Python avec une interface utilisateur intuitive.</p>
+                <a href="#">Voir le projet</a>
+            </li>
+            <li>
+                <h3>Virtualisation d'un réseau local</h3>
+                <p>Virtualisation d'un réseau local avec VirtualBox pour simuler des environnements réseau complexes.</p>
+                <a href="#">Voir le projet</a>
+            </li>
+            <li>
+                <h3>Sensibilisation à la cybersécurité</h3>
+                <p>Organisation d'ateliers de sensibilisation à la cybersécurité pour les étudiants de l'IUT.</p>
+                <a href="#">Voir le projet</a>
+            </li>
+            <li>
+                <h3>Conception d'une Page Web Statique avec HTML et CSS</h3>
+                <p>
+                    <strong>Contexte :</strong> Projet réalisé dans le cadre du cours de développement web (R109) à l'IUT de Roanne.<br>
+                    <strong>Objectif :</strong> Concevoir une page web statique en utilisant uniquement HTML et CSS.<br>
+                    <strong>Fonctionnalités :</strong> Structure HTML sémantique, mise en forme CSS, design responsive, intégration d'images et d'icônes.<br>
+                    <strong>Technologies :</strong> HTML5, CSS3, Git.<br>
+                    <strong>Compétences acquises :</strong> Maîtrise des balises HTML, mise en forme CSS, création d'un design responsive, versionning avec Git.<br>
+                    <a href="https://github.com/medchk06/r109">Voir le projet</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

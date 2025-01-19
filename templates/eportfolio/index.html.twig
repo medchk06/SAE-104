@@ -124,7 +124,6 @@ footer {
     border-top: 1px solid #e0e0e0;
 }
 </style>
-
     <div class="main-content">
         <!-- Section Personal Information -->
         <div class="section">
@@ -132,6 +131,13 @@ footer {
             <h1 class="text-center">CHOUKRI MOHAMMED ISLAM </h1>
             <p class="text-center">18 ans | Du MAROC</p>
             <p class="text-center">Étudiant en première année de Bachelor Réseaux et Telecommunications à L'IUT de Roanne.</p>
+        </div>
+               <!-- Section À propos de moi -->
+        <div class="section">
+            <h2>À propos de moi</h2>
+            <p>
+                Étudiant en BUT Réseaux et Télécommunications, je suis passionné par les technologies et les défis techniques que représente l'administration des réseaux. En parallèle de mes études, je suis un joueur de volley passionné, où j'apprécie le travail d'équipe, la stratégie et l'esprit de compétition. Le code est également une de mes grandes passions : j'aime créer des sites web, développer des applications et explorer les possibilités infinies qu'offre la programmation. Ces différentes activités me permettent de développer des compétences variées, allant de la rigueur technique à la gestion de projets en équipe, en passant par la créativité et la résolution de problèmes. Toujours curieux et motivé, je cherche à concilier mes passions pour construire un avenir professionnel riche et épanouissant.
+            </p>
         </div>
 
         <!-- Section Bachelor in Networks and Telecommunications -->
@@ -151,7 +157,12 @@ footer {
                 {% endfor %}
             </ul>
         </div>
-
+        <!-- Buttons -->
+        <div class="text-center mt-4">
+            <a class="btn btn-outline-primary" href="{{ path('cv') }}">Voir le CV</a>
+            <a class="btn btn-outline-primary" href="{{ path('form') }}">telecharger le CV</a>
+            <a class="btn btn-outline-primary" href="#">Bouton Vide</a>
+        </div>
         <!-- Button to switch to English version -->
         <div class="text-center mt-4">
             <a class="btn btn-outline-primary" href="/home_en">English</a>

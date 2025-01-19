@@ -91,42 +91,37 @@ class EportfolioController extends AbstractController
         return $this->render('eportfolio/form.html.twig');
     }
 
-    #[Route('/generate_cv', name: 'generate_cv', methods: ['POST'])]
-    public function generateCv(Request $request): Response
-    {
-        $data = [
-            'name' => $request->request->get('name'),
-            'email' => $request->request->get('email'),
-            'phone' => $request->request->get('phone'),
-            'address' => $request->request->get('address'),
-            'education' => $request->request->get('education'),
-            'experience' => $request->request->get('experience'),
-            'skills' => $request->request->get('skills'),
-            'languages' => $request->request->get('languages'),
-        ];
-
-        return $this->render('eportfolio/cv.html.twig', [
-            'data' => $data,
-        ]);
-    }
-
     #[Route('/download_cv', name: 'download_cv', methods: ['POST'])]
     public function downloadCv(Request $request): BinaryFileResponse
     {
+        // Récupérez les données du formulaire
         $firstName = $request->request->get('first_name');
         $lastName = $request->request->get('last_name');
         $email = $request->request->get('email');
 
-        // You can add logic here to save the visitor's information if needed
+        // Vous pouvez ajouter ici une logique pour enregistrer les informations du visiteur si nécessaire
 
+        // Chemin vers le fichier CV
         $filePath = $this->getParameter('kernel.project_dir') . '/public/cv choukri.pdf';
+
+        // Vérifiez si le fichier existe
         if (!file_exists($filePath)) {
-            throw $this->createNotFoundException('The file does not exist');
+            throw $this->createNotFoundException('Le fichier CV n\'existe pas.');
         }
 
+        // Renvoyez le fichier en tant que réponse
         $response = new BinaryFileResponse($filePath);
-        $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT, 'CV_CHOUKRI_MOHAMMED_ISLAM.pdf');
+        $response->setContentDisposition(
+            ResponseHeaderBag::DISPOSITION_ATTACHMENT,
+            'cv_choukri_mohammed_islam.pdf' // Nom du fichier téléchargé
+        );
 
         return $response;
+    }
+
+    #[Route('/projects', name: 'projects')]
+    public function projects(): Response
+    {
+        return $this->render('eportfolio/projects.html.twig');
     }
 }
